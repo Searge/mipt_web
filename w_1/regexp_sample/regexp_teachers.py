@@ -1,9 +1,6 @@
-# Решение получается довольно простым,
-# нужно только удобно разбить на группы каждую формулу:
-
-
 def calculate(data, findall):
     matches = findall(r"([abc])([+-]?)=([abc])?([+-]?\d+)?")
+
     for a, sign, b, number in matches:
         right = data.get(b, 0) + int(number or 0)
         if sign == "-":
@@ -13,3 +10,6 @@ def calculate(data, findall):
         else:
             data[a] = right
     return data
+
+# Решение получается довольно простым,
+# нужно только удобно разбить на группы каждую формулу.
