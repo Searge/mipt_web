@@ -1,4 +1,4 @@
-from wikistat import parse
+from wikistat_lect import parse
 
 correct = {
     'Stone_Age': [13, 10, 12, 40],
@@ -28,4 +28,3 @@ elif count == max_count:
     print("Success!")
 else:
     print("{}% passed".format(count*100//max_count))
-
