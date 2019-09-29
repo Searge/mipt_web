@@ -28,3 +28,7 @@ elif count == max_count:
     print("Success!")
 else:
     print("{}% passed".format(count*100//max_count))
+и теги < a > без href проигнорировать?
+
+
+
