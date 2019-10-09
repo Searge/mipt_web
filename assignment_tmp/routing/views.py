@@ -1,5 +1,6 @@
 from django.http import HttpResponse
-from django.views.decorators import http, csrf
+from django.views.decorators.csrf import *
+from django.views.decorators.http import *
 
 
 @csrf_exempt
