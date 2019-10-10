@@ -1,6 +1,6 @@
 from django.http import HttpResponse
-from django.views.decorators.csrf import *
-from django.views.decorators.http import *
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_GET, require_POST
 
 
 @csrf_exempt
@@ -12,13 +12,6 @@ def simple_route(request):
         return HttpResponse(status=405)
 
 
-def sum_route(request, a, b):
-    try:
-        return HttpResponse(str(int(a) + int(b)))
-    except:
-        return HttpResponse(status=404)
-
-
 def slug_route(request, slug):
     try:
         return HttpResponse(slug)
@@ -26,13 +19,20 @@ def slug_route(request, slug):
         return HttpResponse(status=404)
 
 
+def sum_route(request, a, b):
+    try:
+        return HttpResponse(str(int(a) + int(b)))
+    except (ValueError, TypeError):
+        return HttpResponse(status=400)
+
+
 @require_GET
 def sum_get_method(request):
     a = request.GET.get('a')
     b = request.GET.get('b')
     try:
-        return HttpResponse(str(int(a)+int(b)))
-    except:
+        return HttpResponse(str(int(a) + int(b)))
+    except (ValueError, TypeError):
         return HttpResponse(status=400)
 
 
@@ -42,6 +42,6 @@ def sum_post_method(request):
     a = request.POST.get('a')
     b = request.POST.get('b')
     try:
-        return HttpResponse(str(int(a)+int(b)))
-    except:
+        return HttpResponse(str(int(a) + int(b)))
+    except (ValueError, TypeError):
         return HttpResponse(status=400)
