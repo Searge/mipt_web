@@ -1,0 +1,4 @@
+{% if res == "empty" %} {% if params.keys %} {% for key, value in params.items
+%} {{ method }} {{ key }}: {{ value }} statement is {{ res }} {% endfor %} {%
+else %} statement is {{ res }} {% endif %} {% else %} statement is {{ res }}
+{% endif %}
