@@ -18,9 +18,9 @@ def devide(a, b, to_int=False):
     try:
         a = int(a)
         b = int(b)
-        if to_int == False:
-            return a / b
+        if to_int:
+            return int(a / b)
         else:
-            return a // b
+            return a / b
     except:
         return ''
