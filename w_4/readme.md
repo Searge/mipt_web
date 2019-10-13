@@ -43,3 +43,19 @@ path('articles/<int:year>/', views.year_archive)
 - Window выражения
 
 Полный список изменений - https://docs.djangoproject.com/en/2.0/releases/2.0/
+
+## Документация Django (на английском)
+
+- [Migrations](https://docs.djangoproject.com/en/1.11/topics/migrations/)
+- [Aggregation](https://docs.djangoproject.com/en/1.11/topics/db/aggregation/)
+- [Making queries](https://docs.djangoproject.com/en/1.11/topics/db/queries/)
+- [Model field reference](https://docs.djangoproject.com/en/1.11/ref/models/fields/)
+- [Models](https://docs.djangoproject.com/en/1.11/topics/db/models/)
+- [Django ORM Cookbook](https://books.agiliq.com/projects/django-orm-cookbook/en/latest/index.html)
+
+Существуют альтернативные ORM:
+
+* https://www.sqlalchemy.org/
+* http://docs.peewee-orm.com/en/latest/
+
+Но они обычно используются в связке с фрейворками, в которых нет встроенной ORM. Например, Flask
