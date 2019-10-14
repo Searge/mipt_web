@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Index{% endblock %}
 
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'core/css/index.css' %}" type="text/css" /> 
+{% endblock %}
+
 {% block content %}
-     content
+    Without styles
+    <div class="test">Test 1</div>
+    <div class="test2">
+       Test 2 
+    </div>
 {% endblock %}
 

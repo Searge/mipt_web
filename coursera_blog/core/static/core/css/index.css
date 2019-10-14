@@ -1,0 +1,19 @@
+.test {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 12pt;
+
+    color: royalblue;
+    background-color: lightgoldenrodyellow;
+}
+
+.test2 {
+    height: 100px;
+    padding: 10px;
+    border: 5px solid lightgoldenrodyellow;
+    color: royalblue;
+    margin: 10px;
+
+    display: inline-block;
+}
