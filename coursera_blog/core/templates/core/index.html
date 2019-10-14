@@ -1,17 +1,29 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %}Index{% endblock %}
-
+{% extends 'base.html' %} {% load static %} {% block title %}Index{% endblock %}
 {% block styles %}
-    <link rel="stylesheet" href="{% static 'core/css/index.css' %}" type="text/css" /> 
-{% endblock %}
+<link
+  rel="stylesheet"
+  href="{% static 'core/css/index.css' %}"
+  type="text/css"
+/>
+{% endblock %} {% block content %} Without styles
+<div class="test">Test 1</div>
+<div class="test2">
+  Test 2
+  <div class="alert alert-primary" role="alert">
+    A simple primary alert—check it out!
+  </div>
+  <div class="alert alert-secondary" role="alert">
+    A simple secondary alert—check it out!
+  </div>
+  <div class="alert alert-success" role="alert">
+    A simple success alert—check it out!
+  </div>
+  <div class="alert alert-danger" role="alert">
+    A simple danger alert—check it out!
+  </div>
+  <div class="alert alert-warning" role="alert">
+    A simple warning alert—check it out!
+  </div>
+</div>
 
-{% block content %}
-    Without styles
-    <div class="test">Test 1</div>
-    <div class="test2">
-       Test 2 
-    </div>
 {% endblock %}
-
