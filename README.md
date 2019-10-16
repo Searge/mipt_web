@@ -15,3 +15,11 @@ while read requirement; do conda install --yes $requirement || pip install $requ
 ```
 
 [Till Hoffmann](https://stackoverflow.com/a/38609653/9254063)
+
+***
+
+![Created](https://img.shields.io/date/1568609880.svg)
+![last commit](https://img.shields.io/github/last-commit/Searge/mipt_web.svg)
+![Lang count](https://img.shields.io/github/languages/count/Searge/mipt_web.svg)
+![Code size](https://img.shields.io/github/languages/code-size/Searge/mipt_web.svg)
+![Repo size](https://img.shields.io/github/repo-size/Searge/mipt_web.svg)
