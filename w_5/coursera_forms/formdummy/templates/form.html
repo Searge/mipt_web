@@ -1,1 +1,23 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Test Forms</title>
+    </head>
+    <body>
+        <h1>Форма отзыва</h1>
+        <form action="/form/" method="post" enctype="multipart/formdata">
+            {% csrf_token %}
+            <label for="feedback-text">Отзыв: </label>
+            <input type="text" name="text" id="feedback-text">
+            <label for="feedback-grade">Оценка: </label>
+            <input type="number" name="number" id="feedback-grade">
+            <label for="feedback-image">Фото: </label>
+            <input type="file" name="file" id="feedback-image">
+
+            <input type="submit" id="feedback-submit">
+        </form>
+    </body>
+</html>
+
