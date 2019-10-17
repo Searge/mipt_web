@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>Форма отзыва</h1>
-        <form action="/form/" method="post" enctype="multipart/formdata">
+        <form action="/form/" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <label for="feedback-text">Отзыв: </label>
             <input type="text" name="text" id="feedback-text" minlength="3" maxlength="10" required>
