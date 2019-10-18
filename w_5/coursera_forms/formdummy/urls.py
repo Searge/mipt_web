@@ -3,6 +3,6 @@ from django.urls import include, path
 from . import views
 
 urlpatterns = [
-    path('', views.FormDummyView.as_view()),
+    path('', views.SchemaView.as_view()),
 
 ]

@@ -1,6 +1,10 @@
+import json
+from .forms import DummyForm
+from .schemas import REVIEW_SCHEMA
 from django.shortcuts import render
 from django.views import View
-from .forms import DummyForm
+from jsonschema import validate
+from jsonschema.exceptions import ValidationError
 
 
 class FormDummyView(View):
@@ -16,3 +20,16 @@ class FormDummyView(View):
             return render(request, 'form.html', context)
         else:
             return render(request, 'error.html', {'error': form.errors})
+
+
+class SchemaView(View):
+
+    def post(self, request):
+        try:
+            document = json.loads(request.body)
+            validate(document, REVIEW_SCHEMA)
+            return JsonResponcse(document, status=201)
+        except json.JSONDecodeError:
+            return JsonResponcse({'errors': 'Invalid JSON'}, status=400)
+        except ValidationError:
+            pass
