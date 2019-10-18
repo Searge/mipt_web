@@ -9,12 +9,14 @@
         <h1>Форма отзыва</h1>
         <form action="/form/" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <label for="feedback-text">Отзыв: </label>
+            {{ form }}
+            
+            {% comment %} <label for="feedback-text">Отзыв: </label>
             <input type="text" name="text" id="feedback-text" minlength="3" maxlength="10" required>
             <label for="feedback-grade">Оценка: </label>
             <input type="number" name="number" id="feedback-grade" min="1" max="100" required>
             <label for="feedback-image">Фото: </label>
-            <input type="file" name="file" id="feedback-image">
+            <input type="file" name="file" id="feedback-image"> {% endcomment %}
 
             <input type="submit" id="feedback-submit">
         </form>
