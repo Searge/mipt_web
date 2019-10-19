@@ -3,6 +3,6 @@ from django.urls import include, path
 from . import views
 
 urlpatterns = [
-    path('', views.SchemaView.as_view()),
+    path('', views.MarshView.as_view()),
 
 ]

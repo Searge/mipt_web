@@ -1,11 +1,13 @@
+from codecs import strict_errors
 import json
 from .forms import DummyForm
-from .schemas import REVIEW_SCHEMA
+from .schemas import REVIEW_SCHEMA, ReviewSchema
 from django.views import View
 from jsonschema import validate
 from django.shortcuts import render
 from django.http import JsonResponse
 from jsonschema.exceptions import ValidationError
+from marshmallow import ValidationError as MarshmallowError
 
 # switch off the guard
 from django.views.decorators.csrf import csrf_exempt
@@ -39,3 +41,18 @@ class SchemaView(View):
             return JsonResponse({'errors': 'Invalid JSON'}, status=400)
         except ValidationError as exc:
             return JsonResponse({'errors': exc.message}, status=400)
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class MarshView(View):
+
+    def post(self, request):
+        try:
+            document = json.loads(request.body)
+            schema = ReviewSchema(strict=True)
+            data = schema.load(document)
+            return JsonResponse(data.data, status=201)
+        except json.JSONDecodeError:
+            return JsonResponse({'errors': 'Invalid JSON'}, status=400)
+        except MarshmallowError as exc:
+            return JsonResponse({'errors': exc.messages}, status=400)
