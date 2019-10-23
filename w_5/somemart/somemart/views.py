@@ -5,6 +5,8 @@ from django.views import View
 
 from .models import Item, Review
 
+from marshmallow import Schema, fields, ValidationError
+from marshmallow.validate import Length, Range
 
 class AddItemView(View):
     """View для создания товара."""
